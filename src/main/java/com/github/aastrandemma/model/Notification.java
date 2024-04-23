@@ -1,10 +1,11 @@
 package com.github.aastrandemma.model;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 public abstract class Notification {
     private String id;
-    private LocalDate createDateTime;
+    private LocalDateTime createDateTime;
     private boolean status;
 
     public String getId() {
@@ -15,11 +16,11 @@ public abstract class Notification {
         this.id = id;
     }
 
-    public LocalDate getCreateDateTime() {
+    public LocalDateTime getCreateDateTime() {
         return createDateTime;
     }
 
-    public void setCreateDateTime(LocalDate createDateTime) {
+    public void setCreateDateTime(LocalDateTime createDateTime) {
         this.createDateTime = createDateTime;
     }
 
