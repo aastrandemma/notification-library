@@ -10,7 +10,20 @@ import java.util.UUID;
 import java.util.stream.Collectors;
 
 public class EmailDaoImpl implements  EmailDao {
-    private List<Email> emailList = new ArrayList<>();
+    private static EmailDaoImpl instance;
+    private final List<Email> emailList;
+
+    private EmailDaoImpl() { // Make constructor private, so we can't initialize EmailDaoImpl outside this class
+        emailList = new ArrayList<>();
+    }
+
+    public static EmailDaoImpl getInstance() {
+        if (instance == null) {
+            instance = new EmailDaoImpl();
+        }
+        return instance;
+    }
+
     @Override
     public Email save(Email email) {
         if (email == null) throw new IllegalArgumentException("E-mail is null.");
