@@ -1,6 +1,5 @@
 package com.github.aastrandemma.model;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 public abstract class Notification {
